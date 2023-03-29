@@ -21,7 +21,7 @@ def get_data(path):
     return data
 
 # Get data
-path = 'dataset\kc_house_data.csv'
+path = 'dataset/kc_house_data.csv'
 data = get_data(path)
 
 # Add new features
