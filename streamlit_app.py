@@ -21,7 +21,7 @@ def get_data(path):
     return data
 
 # Get data
-path = 'C:/Data/dataset/kc_house_data.csv'
+path = 'dataset\kc_house_data.csv'
 data = get_data(path)
 
 # Add new features
@@ -36,7 +36,7 @@ def data_copy():
 # Create buttons on side bar
 f_attributes = st.sidebar.multiselect('Enter columns', data.columns)
 f_zipcode = st.sidebar.multiselect('Enter zipcode',
-                                data['zipcode'].unique())
+                                   data['zipcode'].unique())
 
 # Filters
 st.sidebar.title('Commercial Options')
@@ -46,13 +46,12 @@ max_yr_built = int(data['yr_built'].max())
 
 st.sidebar.subheader('Select max year built')
 f_yr_built = st.sidebar.slider('Year Built', min_yr_built,
-                                max_yr_built,
-                                min_yr_built)
+                                             max_yr_built,
+                                             min_yr_built)
 
 #======================
 # Data Overview
 #======================
-
 def data_overview():
     data1 = data_copy()
     st.title('Data overview')
@@ -68,13 +67,13 @@ def data_overview():
     else:
         data1 = data.copy() 
     st.dataframe(data1)
-        
-    
-data2 = data_copy()
-      
+
+
+
 #======================
 # Average values and descriptive analysis
 #======================
+data2 = data_copy()
 def statistics():
     # ------------- Average values
     df1 = data2[['id', 'zipcode']].groupby('zipcode').count().reset_index()
@@ -123,11 +122,13 @@ def portfolio_density():
 
     df = data.sample(1000)
 
-    # ------------- Base map - Folium
+    # ------------- Create a map with Folium
     density_map = folium.Map(location=[data['lat'].mean(),
                             data['long'].mean()],
                             default_zoom_start=15
                             )
+    
+    # Make markers to personalize the map
     marker_cluster = MarkerCluster().add_to(density_map)
     for _, row in df.iterrows():
         folium.Marker([row['lat'], row['long']],
