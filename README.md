@@ -43,7 +43,7 @@ You can access the project with this [link](https://paulooo0-data-app-data-app-3
 
 ## How to Run
 
-To run the project from the [font code](https://github.com/Paulooo0/data-app), you must type "streamlit run data_app.py" in your terminal. Then, a tab will open in your browser displaying the dashboard.
+To run the project from the [font code](https://github.com/Paulooo0/data-app), you must type "streamlit run project.py" in your terminal. Then, a tab will open in your browser displaying the dashboard.
 By using this [link](https://paulooo0-data-app-data-app-3j2odn.streamlit.app), the dashboard tab in your browser will open directly.
 
 ## Utilzed Technologies
