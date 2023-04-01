@@ -12,8 +12,8 @@ st.cache(allow_output_mutation=True)
 def main():
     data_overview()
     statistics()
-    commercial_attributes()
     portfolio_density()
+    commercial_attributes()
 
 def get_data(path):
     data = pd.read_csv(path)
@@ -21,7 +21,7 @@ def get_data(path):
     return data
 
 # Get data
-path = 'dataset/kc_house_data.csv'
+path = 'dataset\kc_house_data.csv'
 data = get_data(path)
 
 # Add new features
