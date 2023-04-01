@@ -50,6 +50,6 @@ You can access the project with this link: https://paulooo0-data-app-data-app-3j
 
 ## Project Developer
 
-| [<img
-src="https://avatars.githubusercontent.com/u/110143071?s=400&u=d4e733aa17a79d46d89e1a001470f6252508e3b7&v=4"width=115><br><sub>Paulo H. Nunes</sub>]
-(https://github.com/Paulooo0) | :---: |
+<img src="https://avatars.githubusercontent.com/u/110143071?s=400&u=d4e733aa17a79d46d89e1a001470f6252508e3b7&v=4"
+width=115><br>
+[Paulo H. Nunes](https://github.com/Paulooo0)
