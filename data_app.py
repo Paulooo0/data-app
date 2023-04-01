@@ -17,12 +17,22 @@ def main():
 
 def get_data(path):
     data = pd.read_csv(path)
-    data['date'] = pd.to_datetime(data['date'])
     return data
 
 # Get data
 path = 'dataset/kc_house_data.csv'
 data = get_data(path)
+
+# Transform the data types
+data['date'] = pd.to_datetime(data['date'])
+data['yr_renovated'] = pd.to_datetime(data['yr_renovated'])
+data['bathrooms'] = data['bathrooms'].astype('int64')
+
+# Exclude unused columns
+data = data.drop('sqft_basement', axis=1)
+data = data.drop('sqft_living15', axis=1)
+data = data.drop('sqft_lot15', axis=1)
+data = data.drop('sqft_above', axis=1)
 
 # Add new features
 data['price_m2'] = data['price'] / data['sqft_lot']
@@ -49,6 +59,7 @@ f_yr_built = st.sidebar.slider('Year Built', min_yr_built,
                                              max_yr_built,
                                              min_yr_built)
 
+
 #======================
 # Data Overview
 #======================
@@ -69,13 +80,12 @@ def data_overview():
     st.dataframe(data1)
 
 
-
 #======================
 # Average values and descriptive analysis
 #======================
-data2 = data_copy()
 def statistics():
     # ------------- Average values
+    data2 = data_copy()
     df1 = data2[['id', 'zipcode']].groupby('zipcode').count().reset_index()
     df2 = data2[['price', 'zipcode']].groupby('zipcode').mean().reset_index()
     df3 = data2[['sqft_living', 'zipcode']].groupby('zipcode').mean().reset_index()
@@ -108,10 +118,11 @@ def statistics():
 
     df1 = pd.concat([max_, min_, mean, median, std], axis=1).reset_index()
 
-    df1.columns = ['attributes', 'max', 'min', 'mean', 'meadian', 'std' ]
+    df1.columns = ['attributes', 'max', 'min', 'mean', 'median', 'std' ]
 
     c2.header('Descriptive analysis')
     c2.dataframe(df1, height=600, width=800)
+
 
 #======================
 # Portfolio density
@@ -140,9 +151,8 @@ def portfolio_density():
                                                         row['bathrooms'],
                                                         row['yr_built'])
                     ).add_to(marker_cluster)
-
-    
     folium_static(density_map)
+
 
 #==============================================
 # House distribution per commercial categories
@@ -153,7 +163,7 @@ def commercial_attributes():
     st.header('Average price per year built')
 
     # Data selection
-    df = data.loc[data['yr_built']  < f_yr_built]
+    df = data.loc[data['yr_built'] <= f_yr_built]
     df = df[['yr_built', 'price']].groupby('yr_built').mean().reset_index()
 
     # Plot figure
