@@ -5,10 +5,9 @@
 * [Project Description](#Project-Description)
 * [Functionalities and Demonstration](#Functionalities-and-Demonstration)
 * [Project Access](#Project-Access)
+* [How to Run](#How-to_Run)
 * [Utilized Technologies ](#Utilized-Technologies)
 * [Project Developer](#Project-Developer)
-* [License](#License)
-* [Conclusion](#Conclusion)
 
 # Project Description
 
@@ -40,7 +39,12 @@ This project involves creating a dashboard for data analysis and insight generat
 
 ## Project Access
 
-You can access the project with this link: https://paulooo0-data-app-data-app-3j2odn.streamlit.app, or by the [font code](https://github.com/Paulooo0/data-app).
+You can access the project with this [link](https://paulooo0-data-app-data-app-3j2odn.streamlit.app) or by the [font code](https://github.com/Paulooo0/data-app).
+
+## How to Run
+
+To run the project from the [font code](https://github.com/Paulooo0/data-app), you must type "streamlit run data_app.py" in your terminal. Then, a tab will open in your browser displaying the dashboard.
+By using this [link](https://paulooo0-data-app-data-app-3j2odn.streamlit.app), the dashboard tab in your browser will open directly.
 
 ## Utilzed Technologies
 
