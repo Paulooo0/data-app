@@ -1,5 +1,10 @@
 <h1 align="center">Data App</h1>
 
+# Project Description
+
+This project involves creating a dashboard for data analysis and insight generation using the kc_data_house.csv dataset. The GUI would be developed using the Streamlit library, and the web application is hosted on the Streamlit Community Cloud. 
+* [Video Demo](https://youtu.be/PBR_uSOwDtU)
+
 # Summary
 
 * [Project Description](#Project-Description)
@@ -8,10 +13,6 @@
 * [How to Run](#How-to_Run)
 * [Utilized Technologies ](#Utilized-Technologies)
 * [Project Developer](#Project-Developer)
-
-# Project Description
-
-This project involves creating a dashboard for data analysis and insight generation using the kc_data_house.csv dataset. The GUI would be developed using the Streamlit library, and the web application is hosted on the Streamlit Community Cloud.
 
 # Functionalities and Demonstration
 
